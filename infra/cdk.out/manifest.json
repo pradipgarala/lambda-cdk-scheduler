@@ -1,0 +1,95 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "LambdaCdkStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "LambdaCdkStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "LambdaCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "LambdaCdkStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/61e59d011a0fae03c6c8050525a1944a9563e5f0ff0b64dbd96ac6c3423efd05.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "LambdaCdkStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "LambdaCdkStack.assets"
+      ],
+      "metadata": {
+        "/LambdaCdkStack/hello-world-lambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloworldlambdaServiceRole1E1C4841"
+          }
+        ],
+        "/LambdaCdkStack/hello-world-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloworldlambda89B27E55"
+          }
+        ],
+        "/LambdaCdkStack/hello-world-lambda-scheduler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloworldlambdascheduler23FA6E4C"
+          }
+        ],
+        "/LambdaCdkStack/hello-world-lambda-scheduler/AllowEventRuleLambdaCdkStackhelloworldlambda1DB6EF07": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "helloworldlambdaschedulerAllowEventRuleLambdaCdkStackhelloworldlambda1DB6EF0737C88BA9"
+          }
+        ],
+        "/LambdaCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/LambdaCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/LambdaCdkStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/LambdaCdkStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "LambdaCdkStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
